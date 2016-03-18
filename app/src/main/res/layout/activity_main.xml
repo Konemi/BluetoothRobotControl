@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="iut.valence.tp.bluetoothrobotcontrol.MainActivity">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/layoutBoutons">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Front"
+            android:id="@+id/buttonFront"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/buttonLeft"
+            android:layout_alignLeft="@+id/buttonStop"
+            android:onClick="mainActivityClickListener"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Left"
+            android:id="@+id/buttonLeft"
+            android:layout_alignBaseline="@+id/buttonStop"
+            android:layout_below="@+id/buttonFront"
+            android:layout_toStartOf="@+id/buttonStop"
+            android:onClick="mainActivityClickListener" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Right"
+            android:id="@+id/buttonRight"
+            android:layout_alignBaseline="@+id/buttonStop"
+            android:layout_below="@+id/buttonFront"
+            android:layout_toEndOf="@+id/buttonStop"
+            android:layout_marginLeft="3dp"
+            android:onClick="mainActivityClickListener"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Stop"
+            android:id="@+id/buttonStop"
+            android:layout_below="@+id/buttonFront"
+            android:layout_marginLeft="3dp"
+            android:layout_centerHorizontal="true"
+            android:onClick="mainActivityClickListener"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Back"
+            android:id="@+id/buttonBack"
+            android:layout_below="@+id/buttonStop"
+            android:layout_alignLeft="@+id/buttonStop"
+            android:onClick="mainActivityClickListener" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Joystick"
+            android:id="@+id/modeJoystick"
+            android:layout_below="@+id/buttonBack"
+            android:layout_alignParentRight="true"
+            android:onClick="mainActivityClickListener"/>
+    </RelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/commandText"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/layoutBoutons"
+        android:text="Command"/>
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Send"
+        android:id="@+id/sendButton"
+        android:layout_below="@+id/commandText"
+        android:layout_alignParentStart="true"
+        android:onClick="mainActivityClickListener" />
+
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Device name:"
+        android:id="@+id/deviceName"
+        android:layout_above="@+id/connect"
+        android:layout_marginBottom="9dp"
+        android:layout_alignLeft="@+id/connect" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/deviceTextName"
+        android:layout_toEndOf="@id/deviceName"
+        android:layout_above="@id/connect"
+        android:text=""
+        android:textSize="14sp" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Connect"
+        android:id="@+id/connect"
+        android:layout_above="@+id/currentStatus"
+        android:layout_alignParentStart="true"
+        android:onClick="mainActivityClickListener" />
+
+    <Button
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:text="Disconnect"
+        android:id="@+id/dc"
+        android:layout_below="@+id/deviceName"
+        android:layout_alignParentEnd="true"
+        android:onClick="mainActivityClickListener" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Status:"
+        android:id="@+id/currentStatus"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:clickable="false" />
+
+</RelativeLayout>
